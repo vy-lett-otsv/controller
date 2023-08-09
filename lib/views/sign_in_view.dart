@@ -34,7 +34,7 @@ class _SignInViewState extends State<SignInView> {
                       controller: viewModel.passController,
                     ),
                     ElevatedButton(
-                        onPressed: () {viewModel.onClickLoginButton();},
+                        onPressed: () {viewModel.onClickLoginButton(context);},
                         child: const Text("Login")
                     )
                   ],

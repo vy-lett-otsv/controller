@@ -28,5 +28,6 @@ class LabelEntity {
 
   Map<String, dynamic> toJsonUpdate() => {
     "id": id,
+    "name": name
   };
 }

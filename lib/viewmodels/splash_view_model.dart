@@ -32,7 +32,6 @@ class SplashViewModel extends BaseViewModel {
   Future<void> _initData() async {
     print("Splash initData");
     await Future.wait([
-      //--- SharedPref --//
       SharedPrefModel.instance.onInit(),
     ]);
   }

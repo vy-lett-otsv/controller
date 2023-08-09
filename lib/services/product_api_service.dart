@@ -21,22 +21,18 @@ class ProductAPIService {
         .toList();
   }
 
-  Future<LabelEntity> createProduct(LabelEntity labelEntity) async {
-    final response = await RequestAPIService.instance
-        .post(url: kProductLabelsPath, data: labelEntity.toJson());
+  Future<LabelEntity> createLabels(LabelEntity labelEntity) async {
+    final response = await RequestAPIService.instance.post(url: kProductLabelsPath, data: labelEntity.toJson());
     return LabelEntity.fromJson(response);
   }
 
-  Future<LabelEntity> updateProduct(
-      LabelEntity labelEntity, String labelId) async {
+  Future<LabelEntity> updateLabels(LabelEntity labelEntity, String labelId) async {
     final response = await RequestAPIService.instance
         .put(url: '$kProductLabelsPath/$labelId', data: labelEntity.toJsonUpdate());
     return LabelEntity.fromJson(response);
   }
 
-  Future<void> deleteCustomerNote({required String labelId}) async {
+  Future<void> deleteLabels({required String labelId}) async {
     await RequestAPIService.instance.delete(url: '$kProductLabelsPath/$labelId');
   }
-
-
 }

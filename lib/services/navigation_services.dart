@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:https/views/home_view.dart';
+import 'package:https/views/permission_view.dart';
 import 'package:https/views/sign_in_view.dart';
 import '../views/splash_view.dart';
 class NavigationServices {
@@ -17,6 +18,7 @@ class NavigationServices {
   static const String SPLASH_PROGRESS_ROUTE = "/SPLASH_PROGRESS_ROUTE";
   static const String HOME_ROUTE = "/HOME_ROUTE";
   static const String SIGN_IN_ROUTE = "/SIGN_IN_ROUTE";
+  static const String PERMISSION_ROUTE = "/PERMISSION_ROUTE";
 
   String initialRoute() => SPLASH_PROGRESS_ROUTE;
 
@@ -28,6 +30,8 @@ class NavigationServices {
         return MaterialPageRoute(builder: (_) => const SignInView());
       case HOME_ROUTE:
         return MaterialPageRoute(builder: (_) => const HomeView());
+      case PERMISSION_ROUTE:
+        return MaterialPageRoute(builder: (_) => const PermissionView());
       default:
         return MaterialPageRoute(builder: (_) => SplashView());
     }
@@ -39,5 +43,9 @@ class NavigationServices {
 
   void navigateToSignInScreen(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, SIGN_IN_ROUTE, (route) => false);
+  }
+
+  void navigateToPermissionScreen(BuildContext context) {
+    Navigator.pushNamed(context, PERMISSION_ROUTE);
   }
 }
