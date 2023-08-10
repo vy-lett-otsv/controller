@@ -11,7 +11,7 @@ class SignInViewModel extends BaseViewModel {
   TextEditingController userController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
-  void onClickLoginButton() async {
+  void onClickLoginButton(BuildContext context) async {
     try {
       final AuthEntity entity = await AuthAPIService.getInstance().login(userController.text, passController.text);
 

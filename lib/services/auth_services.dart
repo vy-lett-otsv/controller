@@ -18,8 +18,6 @@ class AuthService {
     try {
       if (SharedPrefModel.instance.userToken == null ||
           SharedPrefModel.instance.userToken!.isEmpty) return false;
-
-      /// get new token
       final response = await AuthAPIService.getInstance().refreshToken(
         accessToken: SharedPrefModel.instance.userToken!,
         refreshToken: SharedPrefModel.instance.userRefreshToken!,
