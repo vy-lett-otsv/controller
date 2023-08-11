@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Sahami",
+      title: "Controller",
       debugShowCheckedModeBanner: false,
       onGenerateRoute: NavigationServices.instance.routeBuilders,
     );
